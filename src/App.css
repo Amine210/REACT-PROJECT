@@ -1,38 +1,155 @@
-.App {
-  text-align: center;
+:root {
+  --primary: #11998e;
+  --secondary: #38ef7d;
+  --white: #fff;
+  --gray: #9b9b9b;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.Side {
+  position: fixed;
+  width: 340px;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  background-color: rgb(29, 35, 39);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Main {
+  height: 100vh;
+  margin-inline-start: 240px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Side .header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px 0px 10px;
+  font-size: 20px;
+}
+
+.Create-note-wrapper {
+  padding: 12px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.Create-note-wrapper button {
+  width: 80%;
+}
+.Create-note-wrapper button:hover {
+  cursor: pointer;
+}
+.Note-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: none;
+  background: none;
+  color: inherit;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.Note-button-selected {
+  background: rgb(44, 51, 56);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Note-button:hover {
+  background: rgb(60, 60, 60);
+}
+.noteWrapper {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+
+
+#pinned {
+  color: var(--primary);
+}
+
+
+.form__group {
+  position: relative;
+  padding: 15px 0 15px 0;
+  margin-top: 10px;
+  width: 95%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid var(--gray);
+  outline: 0;
+  font-size: 1.3rem;
+  color: var(--white);
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
   }
-  to {
-    transform: rotate(360deg);
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
   }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: var(--gray);
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 700;    
+  }
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, var(--primary), var(--secondary));
+  border-image-slice: 1;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+
+/* demo */
+body {
+  font-family: 'Poppins', sans-serif; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  background-color: #222222;
+}
+
+.GiHamburgerMenu:hover , .MdOutlineArrowBackIosNew:hover {
+cursor: pointer;
+transform: scale(1.2);
 }

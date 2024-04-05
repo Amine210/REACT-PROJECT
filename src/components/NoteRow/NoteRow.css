@@ -1,0 +1,8 @@
+.ImCheckboxChecked:hover,.deleteIcon:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+.deleteIcon , .ImCheckboxChecked {
+    font-size: 40px;
+}
